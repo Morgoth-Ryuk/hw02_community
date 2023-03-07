@@ -7,17 +7,16 @@ def index(request):
     context = {
         'posts': posts,
     }
-    return render(request, 'posts/index.html', context) 
+    return render(request, 'posts/index.html', context)
 
 
 def groups(request, slug):
     template = 'posts/group_list.html'
     group = get_object_or_404(Group, slug=slug)
     posts = Post.objects.filter(group=group).order_by(
-        '-pub_date'
-        )[:10]
+        '-pub_date')[:10]
     context = {
         'group': group,
         'posts': posts,
     }
-    return render(request, template, context) 
+    return render(request, template, context)
