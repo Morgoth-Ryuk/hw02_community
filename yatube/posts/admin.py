@@ -6,6 +6,9 @@ from .models import Group
 
 
 class PostAdmin(admin.ModelAdmin):
+    '''
+    Регистрация и настройка отображения модели Post в админке.
+    '''
     list_display = (
         'pk',
         'text',

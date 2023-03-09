@@ -42,16 +42,7 @@
         </p>
         <article>
           {% for post in posts %}
-            <ul>
-              <li>
-                Автор: {{ post.author.get_full_name }}
-              </li>
-              <li>
-                Дата публикации: {{ post.pub_date|date:"d E Y" }}
-              </li>
-            </ul>
-            <p>{{ post.text }}</p>
-            
+            {% include  'includes/postcard.html'%}
             {% if not forloop.last %}<hr>{% endif %}
           {% endfor %} 
         </article>
