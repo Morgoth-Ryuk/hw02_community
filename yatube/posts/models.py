@@ -5,6 +5,9 @@ User = get_user_model()
 
 
 class Group(models.Model):
+    '''
+    Модели группы.
+    '''
 
     class Meta:
         verbose_name = 'Группа'
@@ -24,6 +27,9 @@ class Group(models.Model):
 
 
 class Post(models.Model):
+    '''
+    Модели публикации.
+    '''
 
     class Meta:
         verbose_name = 'Публикация'
