@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Post, Group
 from django.shortcuts import redirect
+from django.contrib.auth.decorators import login_required
 
 
 QUANTITY_OF_POSTS_ON_PAGE = 10
@@ -19,7 +20,7 @@ def authorized_only(func):
         return redirect('/auth/login/')        
     return check_user
 
-
+@login_required
 def index(request):
     posts = Post.objects.order_by(
         '-pub_date')[:QUANTITY_OF_POSTS_ON_PAGE]
