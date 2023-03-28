@@ -65,10 +65,13 @@ def post_detail(request, post_id):
     # Здесь код запроса к модели и создание словаря контекста
     template = 'posts/post_detail.html'
     post = Post.objects.get(id = post_id)
-    post_count = Post.objects.filter(author_id = post.author.id)
+    post_count = Post.objects.filter(author_id = post.author.id).count()
     author = post.author
-
+    date_of_post = post.pub_date
     context = {
-        'page_obj': page_obj,
+        'author': author,
+        'post_count': post_count,
+        'post': post,
+        'date_of_post': date_of_post,
     }
     return render(request, template, context) 
