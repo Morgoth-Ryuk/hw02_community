@@ -1,7 +1,7 @@
 <!-- templates/posts/group_list.html -->
 {% extends 'base.html' %} 
 {% load static %}
-
+{% block title %} Посты Группы {{ group.title }} {% endblock %}
 {% block content %}
       <!-- класс py-5 создает отступы сверху и снизу блока -->
       <div class="container py-5">
