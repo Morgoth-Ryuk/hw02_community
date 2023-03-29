@@ -53,7 +53,7 @@
              {% if request.resolver_match.view_name  == '' %}
                 active
              {% endif %}"
-             href="<!--  -->">Новая запись</a>
+             href="{% url 'posts:post_create' %}">Новая запись</a>
         </li>
         <li class="nav-item"> 
           <a class="nav-link link-light
